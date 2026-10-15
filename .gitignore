@@ -1,0 +1,41 @@
+# Dependencies and generated build/type output (including isolated test builds)
+node_modules/
+.next/
+.next-*/
+out/
+dist/
+coverage/
+*.tsbuildinfo
+next-env.d.ts
+
+# Environment and private runtime state, at any directory depth
+.env*
+!.env.example
+.data/
+uploads/
+*.db
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.pem
+*.key
+
+# Browser reports can contain authenticated sessions and supplied form data
+playwright-report*/
+test-results*/
+blob-report/
+*.log
+npm-debug.log*
+
+# Historical local delivery snapshots remain on disk; Git is the source history
+/deliverables/
+/产品相关/screenshots/
+/交接文件/
+
+# Editor and OS local state
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.tmp
+*.bak

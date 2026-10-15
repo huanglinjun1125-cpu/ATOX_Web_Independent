@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      NEXT_DIST_DIR: .next-ci
+      DB_PATH: .data/ci-build/db
+      UPLOAD_PATH: .data/ci-build/uploads
+      APP_ORIGIN: http://127.0.0.1:3101
+      ENABLE_DEV_MAIL: 'false'
+      ENABLE_TICKETING_PREVIEW: 'false'
+      TRUST_PROXY: 'false'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Check tracked files and secret patterns
+        run: npm run check:repository
+      - run: npm run lint
+      - name: Generate current Next.js route types
+        run: npx next typegen
+      - run: npm run typecheck
+      - run: npm test
+      - name: Install browser
+        run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+      - run: npm run test:ticketing-disabled
+      - run: npm run build
+      - run: npm run test:production

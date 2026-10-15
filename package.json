@@ -1,0 +1,52 @@
+{
+  "name": "atox-web-independent",
+  "version": "0.2.0",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "cross-env NEXT_TELEMETRY_DISABLED=1 next dev --hostname 127.0.0.1",
+    "build": "cross-env NEXT_TELEMETRY_DISABLED=1 next build",
+    "start": "cross-env NEXT_TELEMETRY_DISABLED=1 next start --hostname 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "check:repository": "node scripts/check-repository.mjs",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx --env-file=.env.local scripts/migrate.ts",
+    "events:cleanup-files": "tsx --env-file=.env.local scripts/cleanup-event-files.ts",
+    "ticketing:maintain": "cross-env NODE_ENV=development tsx --env-file=.env.local scripts/ticketing-maintain.ts",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "test:e2e": "playwright test",
+    "test:production": "playwright test --config=playwright.production.config.ts",
+    "test:ticketing-disabled": "playwright test --config=playwright.ticketing-disabled.config.ts",
+    "admin:bootstrap": "tsx --env-file=.env.local scripts/admin-bootstrap.ts",
+    "build:preview": "node scripts/build-public-preview.mjs"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.5.8",
+    "drizzle-orm": "^0.45.3",
+    "next": "^16.4.0",
+    "pdf-lib": "^1.17.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "server-only": "^0.0.1",
+    "sharp": "^0.35.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^26.6.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "cross-env": "^10.1.0",
+    "drizzle-kit": "^0.31.11",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.0",
+    "prettier": "^3.9.9",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3",
+    "esbuild": "0.25.12"
+  }
+}

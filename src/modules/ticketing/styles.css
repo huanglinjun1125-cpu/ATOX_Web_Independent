@@ -1,0 +1,732 @@
+.ticketing-site {
+  min-height: 100dvh;
+}
+.tk-module {
+  flex: 1;
+  color: var(--text);
+  line-height: 1.7;
+  min-width: 0;
+}
+.tk-module button,
+.tk-module input,
+.tk-module select,
+.tk-module textarea {
+  font: inherit;
+  color: inherit;
+}
+.tk-module .tk-main {
+  padding: 32px 0 64px;
+}
+.tk-module .tk-banner {
+  border: 1px solid #b7b9b740;
+  background: #b7b9b70b;
+  color: var(--purple);
+  border-radius: 0;
+  padding: 12px 18px;
+  font-size: 12px;
+}
+.tk-module .tk-module-nav {
+  display: flex;
+  gap: 10px;
+  padding: 24px 0 18px;
+  border-bottom: 1px solid var(--line);
+}
+.tk-module .tk-module-nav a {
+  padding: 9px 20px;
+  border: 1px solid transparent;
+  border-radius: 0;
+  color: var(--muted);
+}
+.tk-module .tk-module-nav a:hover {
+  color: var(--text);
+  background: var(--panel);
+}
+.tk-module .tk-module-nav a[aria-current="page"] {
+  color: var(--purple);
+  background: #b7b9b712;
+  border-color: #b7b9b740;
+}
+.tk-module .tk-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 28px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.tk-module .tk-steps > span {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.tk-module .tk-steps > span.active {
+  color: var(--lime);
+}
+.tk-module .tk-steps i {
+  height: 1px;
+  width: 64px;
+  background: var(--line);
+}
+.tk-module .tk-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+.tk-module .tk-columns > * {
+  min-width: 0;
+}
+.tk-module .tk-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  padding: 28px;
+}
+.tk-module h1 {
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.3;
+  letter-spacing: -1px;
+  margin: 24px 0 18px;
+  font-weight: 750;
+}
+.tk-module h2 {
+  font-size: 22px;
+  line-height: 1.4;
+  margin: 10px 0 22px;
+  font-weight: 650;
+}
+.tk-module h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 16px 0;
+}
+.tk-module .tk-event-visual {
+  height: 320px;
+  background: radial-gradient(
+    ellipse at 75% 60%,
+    #404240,
+    #222422 60%,
+    #191b19
+  );
+  border: 1px solid #b7b9b740;
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+}
+.tk-module .tk-event-visual small {
+  font: 10px monospace;
+  letter-spacing: 1.4px;
+  color: var(--purple);
+}
+.tk-module .tk-event-visual strong {
+  display: block;
+  position: relative;
+  z-index: 1;
+  font-size: clamp(38px, 4.3vw, 60px);
+  line-height: 1.1;
+  margin-top: 24px;
+  letter-spacing: -2px;
+}
+.tk-module .tk-event-visual em {
+  color: var(--lime);
+  font-style: normal;
+}
+.tk-module .tk-event-visual > span {
+  position: absolute;
+  font-size: 260px;
+  line-height: 1;
+  top: 38px;
+  right: -35px;
+  color: #b7b9b733;
+  transform: rotate(-12deg);
+}
+.tk-module .tk-event-visual > b {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  font: 10px monospace;
+  letter-spacing: 2px;
+  color: var(--purple);
+}
+.tk-module .tk-intro,
+.tk-module .tk-muted,
+.tk-module .tk-policy {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.85;
+}
+.tk-module .tk-details {
+  border-top: 1px solid var(--line);
+  padding-top: 8px;
+}
+.tk-module dt {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 16px 0 5px;
+}
+.tk-module dd {
+  margin: 0;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+.tk-module dd small {
+  color: var(--muted);
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+}
+.tk-module .tk-eyebrow {
+  font: 11px monospace;
+  letter-spacing: 2px;
+  color: var(--purple);
+}
+.tk-module .tk-ticket-list {
+  display: grid;
+  gap: 12px;
+  margin: 22px 0 28px;
+}
+.tk-module .tk-ticket {
+  border: 1px solid var(--line);
+  border-radius: 0;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  cursor: pointer;
+}
+.tk-module .tk-ticket.selected {
+  border-color: var(--purple);
+  background: #b7b9b70b;
+}
+.tk-module .tk-ticket:has(input:disabled) {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.tk-module .tk-ticket:has(input:focus-visible) {
+  outline: 2px solid var(--lime);
+  outline-offset: 4px;
+}
+.tk-module input[type="radio"],
+.tk-module input[type="checkbox"] {
+  accent-color: var(--lime);
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin: 0;
+}
+.tk-module .tk-ticket > span {
+  flex: 1;
+  min-width: 0;
+}
+.tk-module .tk-ticket strong {
+  display: block;
+  font-size: 16px;
+}
+.tk-module .tk-ticket small {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 5px;
+}
+.tk-module .tk-ticket b {
+  font-size: 20px;
+  color: var(--lime);
+  white-space: nowrap;
+}
+.tk-module .tk-label {
+  display: block;
+  font-size: 14px;
+  color: var(--text);
+  margin: 0 0 22px;
+}
+.tk-module .tk-quantity {
+  display: flex;
+  width: 156px;
+  border: 1px solid #4f514f;
+  border-radius: 0;
+  overflow: hidden;
+}
+.tk-module .tk-quantity button {
+  width: 45px;
+  min-height: 44px;
+  border: 0;
+  background: #252725;
+}
+.tk-module .tk-quantity input {
+  min-width: 0;
+  width: 66px;
+  border: 0;
+  background: #111114;
+  text-align: center;
+  appearance: textfield;
+}
+.tk-module .tk-quantity input::-webkit-inner-spin-button {
+  appearance: none;
+}
+.tk-module .tk-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid var(--line);
+  margin-top: 22px;
+  padding: 22px 0;
+  font-size: 14px;
+}
+.tk-module .tk-total strong {
+  font-size: clamp(22px, 2.5vw, 32px);
+  color: var(--lime);
+  letter-spacing: -1px;
+  overflow-wrap: anywhere;
+}
+.tk-module .tk-button,
+.tk-confirm-dialog .tk-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 48px;
+  border-radius: 0;
+  border: 1px solid transparent;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 12px;
+}
+.tk-module .tk-primary,
+.tk-confirm-dialog .tk-primary {
+  color: #1a2110;
+  background: var(--lime);
+}
+.tk-module .tk-primary:hover:not(:disabled),
+.tk-confirm-dialog .tk-primary:hover:not(:disabled) {
+  background: #ff665c;
+}
+.tk-module .tk-secondary,
+.tk-confirm-dialog .tk-secondary {
+  background: #252725;
+  color: var(--text);
+  border-color: #4f514f;
+}
+.tk-module .tk-secondary:hover:not(:disabled) {
+  border-color: var(--purple);
+}
+.tk-module .tk-text-button {
+  display: block;
+  border: 0;
+  padding: 12px 0;
+  margin: 14px auto 0;
+  background: none;
+  color: var(--purple);
+  font-size: 13px;
+  min-height: 44px;
+}
+.tk-module .tk-policy {
+  padding: 12px 8px;
+}
+.tk-module .tk-policy h3 {
+  color: var(--text);
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.tk-module .tk-eligibility {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 0 0 30px;
+}
+.tk-module fieldset {
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+  border: 0;
+}
+.tk-module fieldset:disabled {
+  opacity: 0.8;
+}
+.tk-module .tk-label > input,
+.tk-module .tk-label > select,
+.tk-module .tk-label > textarea {
+  display: block;
+  width: 100%;
+  background: #111114;
+  border: 1px solid #454745;
+  border-radius: 0;
+  margin-top: 9px;
+  padding: 12px 14px;
+  min-height: 46px;
+  font-size: 14px;
+  line-height: 1.6;
+  color-scheme: dark;
+}
+.tk-module .tk-label > input:focus-visible,
+.tk-module .tk-label > select:focus-visible,
+.tk-module .tk-label > textarea:focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: 2px;
+}
+.tk-module input:read-only {
+  color: var(--muted);
+  background: #222128;
+}
+.tk-module .tk-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.tk-module .tk-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 13px;
+  margin: 12px 0 20px;
+}
+.tk-module .tk-check > input {
+  margin-top: 4px;
+}
+.tk-module .tk-purposes {
+  margin: 20px 0;
+}
+.tk-module .tk-purposes legend {
+  font-size: 14px;
+}
+.tk-module .tk-purposes .tk-check {
+  display: inline-flex;
+  margin: 12px 18px 12px 0;
+}
+.tk-module .tk-policy-inline {
+  padding: 18px;
+  background: #b7b9b708;
+  border: 1px solid #b7b9b730;
+  border-radius: 0;
+  font-size: 13px;
+  color: var(--muted);
+  margin: 22px 0;
+}
+.tk-module .tk-policy-inline h3 {
+  font-size: 14px;
+  margin: 0 0 8px;
+  color: var(--purple);
+}
+.tk-module .tk-policy-inline p {
+  margin: 0;
+}
+.tk-module .tk-summary > p {
+  color: var(--muted);
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+.tk-module .tk-summary .tk-order-state {
+  padding: 14px;
+  border-radius: 0;
+  white-space: normal;
+}
+.tk-module .tk-error {
+  border: 1px solid #fb929252;
+  border-radius: 0;
+  padding: 16px;
+  background: #fb92920b;
+  color: #ffaaaa;
+  font-size: 14px;
+}
+.tk-module .tk-notice,
+.tk-module .tk-order-note {
+  padding: 14px;
+  border: 1px solid #b7b9b740;
+  border-radius: 0;
+  background: #b7b9b70b;
+  color: var(--purple);
+  font-size: 13px;
+}
+.tk-module .tk-simulator {
+  margin-top: 20px;
+  border-style: dashed;
+}
+.tk-module .tk-simulator summary {
+  cursor: pointer;
+  font-size: 15px;
+  color: var(--purple);
+  min-height: 32px;
+}
+.tk-module .tk-simulator p {
+  color: var(--muted);
+  font-size: 12px;
+}
+.tk-module .tk-simulator > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.tk-module .tk-sim-button {
+  min-height: 44px;
+  border: 1px solid #4f514f;
+  background: #252725;
+  color: var(--purple);
+  border-radius: 0;
+  padding: 9px 12px;
+  font-size: 12px;
+}
+.tk-module :is(a, button, summary):focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: 4px;
+}
+.tk-module .tk-orders {
+  padding: 28px 0;
+  min-height: 55vh;
+}
+.tk-module .tk-orders-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.tk-module .tk-orders-heading h1 {
+  margin: 0 0 8px;
+}
+.tk-module .tk-orders-heading p,
+.tk-module .tk-order-count {
+  color: var(--muted);
+  font-size: 14px;
+}
+.tk-module .tk-orders button,
+.tk-module .tk-orders-empty a {
+  min-height: 44px;
+  border: 1px solid #4f514f;
+  background: #252725;
+  border-radius: 0;
+  padding: 10px 16px;
+  white-space: nowrap;
+  font-size: 13px;
+}
+.tk-module .tk-orders-empty {
+  text-align: center;
+  padding: 55px 20px;
+  color: var(--muted);
+}
+.tk-module .tk-orders-empty h2 {
+  color: var(--text);
+}
+.tk-module .tk-orders-empty a {
+  display: inline-block;
+  color: var(--purple);
+  margin-top: 15px;
+}
+.tk-module .tk-orders-list {
+  display: grid;
+  gap: 18px;
+}
+.tk-module .tk-order-card {
+  border: 1px solid var(--line);
+  border-radius: 0;
+  padding: 26px;
+  background: var(--panel);
+}
+.tk-module .tk-order-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+.tk-module .tk-order-top h2 {
+  font-size: 19px;
+  margin: 0;
+}
+.tk-module .tk-order-state {
+  font-size: 12px;
+  border-radius: 20px;
+  padding: 5px 12px;
+  color: #f2cc88;
+  background: #f2cc8810;
+  border: 1px solid #f2cc8833;
+  white-space: nowrap;
+}
+.tk-module .tk-order-state-paid {
+  color: var(--lime);
+  background: #ff665c10;
+  border-color: #ff665c40;
+}
+.tk-module .tk-order-state-closed {
+  color: var(--muted);
+  background: #989a9810;
+  border-color: var(--line);
+}
+.tk-module .tk-order-state-confirming,
+.tk-module .tk-order-state-reconciliation {
+  color: var(--purple);
+  background: #b7b9b712;
+  border-color: #b7b9b740;
+}
+.tk-module .tk-order-card h3 {
+  color: var(--muted);
+  font-size: 15px;
+  margin: 14px 0 20px;
+}
+.tk-module .tk-order-card dl {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(0, 1.5fr) minmax(
+      0,
+      0.5fr
+    ) minmax(0, 1fr);
+  gap: 18px;
+  margin: 0;
+}
+.tk-module .tk-order-card dt {
+  margin-top: 0;
+}
+.tk-module .tk-order-amount {
+  color: var(--lime);
+  font-weight: 700;
+}
+.tk-module .tk-order-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+  margin-top: 24px;
+}
+.tk-module .tk-order-actions a {
+  min-height: 44px;
+  border: 1px solid #4f514f;
+  padding: 10px 18px;
+  border-radius: 0;
+  color: var(--purple);
+  font-size: 13px;
+}
+.tk-module .tk-order-actions .tk-order-pay {
+  color: #1a2110;
+  background: var(--lime);
+  border-color: var(--lime);
+}
+.tk-module .tk-orders-pages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 28px;
+}
+.tk-confirm-dialog {
+  width: min(480px, calc(100vw - 32px));
+  max-height: calc(100dvh - 48px);
+  overflow-y: auto;
+  color: var(--text);
+  background: var(--panel);
+  border: 1px solid #4f514f;
+  border-radius: 0;
+  padding: 28px;
+  margin: auto;
+}
+.tk-confirm-dialog::backdrop {
+  background: #000b;
+  backdrop-filter: blur(4px);
+}
+.tk-confirm-dialog h2 {
+  font-size: 23px;
+  margin: 0 0 16px;
+}
+.tk-confirm-dialog p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+.tk-confirm-dialog > div {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+.tk-confirm-dialog button:focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: 4px;
+}
+@media (max-width: 1000px) {
+  .tk-module .tk-columns {
+    gap: 20px;
+  }
+  .tk-module .tk-card {
+    padding: 22px;
+  }
+  .tk-module .tk-ticket {
+    flex-wrap: wrap;
+  }
+  .tk-module .tk-ticket b {
+    margin-left: 32px;
+  }
+}
+@media (max-width: 700px) {
+  .tk-module .tk-main {
+    padding: 22px 0 40px;
+  }
+  .tk-module .tk-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .tk-module .tk-card {
+    padding: 20px;
+  }
+  .tk-module .tk-event-visual {
+    height: 250px;
+  }
+  .tk-module .tk-event-visual strong {
+    font-size: 44px;
+  }
+  .tk-module .tk-event-visual > span {
+    font-size: 210px;
+    right: -20px;
+  }
+  .tk-module .tk-steps {
+    font-size: 12px;
+    gap: 14px;
+  }
+  .tk-module .tk-steps i {
+    width: 28px;
+  }
+  .tk-module .tk-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .tk-module .tk-banner {
+    font-size: 11px;
+  }
+  .tk-module .tk-order-top {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .tk-module .tk-order-top h2 {
+    font-size: 17px;
+  }
+  .tk-module .tk-order-card {
+    padding: 20px;
+  }
+  .tk-module .tk-order-card dl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .tk-module .tk-order-id {
+    grid-column: 1/-1;
+  }
+  .tk-module .tk-orders-heading {
+    gap: 12px;
+  }
+  .tk-module .tk-orders-heading button {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+  .tk-module .tk-orders-pages {
+    gap: 12px;
+  }
+  .tk-confirm-dialog {
+    padding: 22px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tk-module *,
+  .tk-confirm-dialog * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

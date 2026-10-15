@@ -1,0 +1,153 @@
+.mr-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+.mr-filters label {
+  flex: 1 1 200px;
+  display: grid;
+  gap: 8px;
+  font-size: 13px;
+}
+.mr-filters select {
+  min-width: 0;
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid #4f514f;
+  color: var(--text);
+  border-radius: 0;
+  padding: 11px;
+  font: inherit;
+}
+.mr-filters select:focus-visible,
+.mr-review textarea:focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: 3px;
+}
+.mr-cover {
+  display: block;
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  height: auto;
+  background: var(--bg);
+  margin: 18px 0;
+  border-radius: 0;
+}
+.mr-official h3 {
+  font-size: 19px;
+  overflow-wrap: anywhere;
+}
+.mr-prewrap {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.mr-dl-row {
+  display: contents;
+}
+.mr-files {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+  margin: 22px 0;
+}
+.mr-files li {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: baseline;
+  font-size: 13px;
+}
+.mr-files a {
+  color: var(--purple);
+  overflow-wrap: anywhere;
+}
+.mr-files small {
+  color: var(--muted);
+}
+.mr-review fieldset {
+  display: grid;
+  gap: 18px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.mr-review label {
+  display: grid;
+  gap: 9px;
+  font-size: 13px;
+}
+.mr-review textarea {
+  width: 100%;
+  max-width: 100%;
+  min-height: 110px;
+  resize: vertical;
+  background: var(--bg);
+  border: 1px solid #4f514f;
+  color: var(--text);
+  border-radius: 0;
+  padding: 12px;
+  font: inherit;
+}
+.mr-review .mr-radio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.mr-radio label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mr-radio input {
+  accent-color: var(--purple);
+  width: 17px;
+  height: 17px;
+}
+.mr-back {
+  display: inline-block;
+  color: var(--purple);
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+.mr-history .adm-details {
+  margin-bottom: 0;
+}
+.mr-history-note {
+  display: block;
+  margin-top: 7px;
+}
+.mr-version {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+.mr-record-title {
+  font-size: 18px;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.mr-confirm p {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.mr-actions {
+  margin-top: 20px;
+}
+@media (max-width: 600px) {
+  .mr-filters {
+    align-items: stretch;
+  }
+  .mr-filters label {
+    flex-basis: 100%;
+  }
+  .mr-filters button {
+    width: 100%;
+  }
+  .mr-official .adm-details {
+    grid-template-columns: 90px minmax(0, 1fr);
+  }
+}

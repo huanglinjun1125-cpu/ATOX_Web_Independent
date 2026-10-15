@@ -1,4 +1,7 @@
 /** Original code-native ATOX artwork. No remote assets or raster effects. */
+// Keep server and browser SVG attributes identical across math implementations.
+const coordinate = (value: number) => Number(value.toFixed(3));
+
 export function BrandMark({ className = "" }: { className?: string }) {
   return (
     <svg
@@ -59,8 +62,8 @@ export function OrbitalArt({
                   key={dy}
                   cx="360"
                   cy={352 + dy}
-                  rx={Math.sqrt(235 * 235 - dy * dy)}
-                  ry={39 - Math.abs(dy) / 9}
+                  rx={coordinate(Math.sqrt(235 * 235 - dy * dy))}
+                  ry={coordinate(39 - Math.abs(dy) / 9)}
                   opacity=".55"
                 />
               ))}
@@ -92,7 +95,7 @@ export function OrbitalArt({
               return (
                 <path
                   key={i}
-                  d={`M${360 + Math.cos(a) * 307},${352 + Math.sin(a) * 307} l${Math.cos(a) * (i % 5 ? 3 : 9)},${Math.sin(a) * (i % 5 ? 3 : 9)}`}
+                  d={`M${coordinate(360 + Math.cos(a) * 307)},${coordinate(352 + Math.sin(a) * 307)} l${coordinate(Math.cos(a) * (i % 5 ? 3 : 9))},${coordinate(Math.sin(a) * (i % 5 ? 3 : 9))}`}
                   opacity=".45"
                 />
               );
@@ -121,7 +124,7 @@ export function OrbitalArt({
                 cy="351"
                 rx={285 - i * 2.5}
                 ry={210 - i * 2.5}
-                transform={`rotate(${i * 5.4 - 43} 370 351)`}
+                transform={`rotate(${coordinate(i * 5.4 - 43)} 370 351)`}
                 opacity={i % 3 ? 0.4 : 0.85}
               />
             ))}

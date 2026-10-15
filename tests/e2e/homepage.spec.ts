@@ -5,6 +5,10 @@ test("Long homepage anchors, sticky header and all activity/project entry positi
 }, testInfo) => {
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
+  page.on("console", (message) => {
+    if (message.type() === "error" && /hydrat|server rendered HTML/i.test(message.text()))
+      errors.push(message.text());
+  });
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto("/");
   await expect(page).toHaveTitle(/ATOX.*连接青年/);

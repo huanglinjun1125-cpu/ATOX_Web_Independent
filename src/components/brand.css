@@ -11,9 +11,6 @@
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   color-scheme: dark;
 }
-html {
-  scroll-padding-top: 104px;
-}
 body {
   font-family:
     "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
@@ -454,7 +451,7 @@ summary:focus-visible {
 }
 @media (prefers-reduced-motion: reduce) {
   html {
-    scroll-behavior: auto;
+    scroll-behavior: auto !important;
   }
   *,
   *:before,

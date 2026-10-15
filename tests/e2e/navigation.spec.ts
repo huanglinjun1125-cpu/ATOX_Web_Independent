@@ -8,8 +8,8 @@ test("Home, events and projects share navigation and accessible menu behavior", 
     await page.goto(path);
     const header = page.locator(".site-header");
     const nav = header.getByRole("navigation", { name: "主导航", exact: true });
-    await expect(nav.getByRole("link")).toHaveText(["首页", "活动", /项目/, "购票（模拟）"]);
-    await expect(nav.getByRole("link")).toHaveCount(4);
+    await expect(nav.getByRole("link")).toHaveText(["首页", "活动", /项目/]);
+    await expect(nav.getByRole("link")).toHaveCount(3);
     await expect(header.locator('a[href="/projects/submit"]')).toHaveCount(0);
     const menu = header.getByRole("button", { name: "打开菜单", exact: true });
     await menu.click();

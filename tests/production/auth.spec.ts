@@ -25,7 +25,7 @@ test("Production disables development mail and protects account routes", async (
   expect((await request.get("/events")).status()).toBe(200);
   const homepage = await request.get("/");
   expect(homepage.status()).toBe(200);
-  expect(await homepage.text()).toContain("组织官网演示站点");
+  expect(await homepage.text()).toContain("ATOX 爱拓无限");
   const projects = await request.get("/projects");
   expect(projects.status()).toBe(200);
   expect(await projects.text()).toContain("每一个想法");
@@ -35,7 +35,7 @@ test("Production disables development mail and protects account routes", async (
   expect((await request.get("/projects/submit")).status()).toBe(200);
   const board = await request.get("/api/events");
   expect(board.status()).toBe(200);
-  expect((await board.json()).events).toHaveLength(3);
+  expect((await board.json()).events).toHaveLength(4);
   expect((await request.get("/events/upcoming-demo")).status()).toBe(200);
   expect((await request.get("/events/demo/teams")).status()).toBe(200);
   expect((await request.get("/api/events/demo/teams")).status()).toBe(200);

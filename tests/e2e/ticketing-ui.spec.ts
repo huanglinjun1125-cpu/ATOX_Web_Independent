@@ -36,7 +36,7 @@ test("Shared dark navigation, debounced quotes, stale response isolation and quo
 }, info) => {
   await login(page, context);
   const header = page.locator(".site-header");
-  await expect(header).toContainText("HACKATHON");
+  await expect(header).toContainText("ATOX");
   await expect(header.getByRole("link", { name: /我的账户/ })).toBeVisible();
   await expect(page.locator(".tk-header, .tk-language")).toHaveCount(0);
   await expect(
@@ -47,7 +47,7 @@ test("Shared dark navigation, debounced quotes, stale response isolation and quo
       .locator(".tk-card")
       .first()
       .evaluate((element) => getComputedStyle(element).backgroundColor),
-  ).toBe("rgb(26, 26, 32)");
+  ).toBe("rgb(17, 19, 19)");
   let calls = 0;
   let release!: () => void;
   const gate = new Promise<void>((resolve) => {

@@ -57,7 +57,7 @@ test("Mobile layout and persisted language switching", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
   await page.getByRole("button", { name: "Switch to English" }).click();
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
-    "Turn curiosity",
+    "Human ideas.",
   );
   await page.reload();
   await expect(page.locator("html")).toHaveAttribute("lang", "en");

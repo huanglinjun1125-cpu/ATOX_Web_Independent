@@ -46,6 +46,7 @@ export function TicketCheckout(props: {
   const { catalog, user, selection, orderId } = props;
   const { language, t } = useTicketText();
   const router = useRouter();
+  const changeTrigger = useRef<HTMLButtonElement>(null);
   const {
     answers,
     quote,
@@ -415,6 +416,7 @@ export function TicketCheckout(props: {
               )}
               {(!order || order.status !== "paid") && (
                 <button
+                  ref={changeTrigger}
                   className="tk-text-button"
                   disabled={busy || creationUncertain}
                   onClick={() => void changeSelection()}
@@ -459,6 +461,7 @@ export function TicketCheckout(props: {
       )}
       {confirmOpen && (
         <TicketConfirmDialog
+          returnFocusRef={changeTrigger}
           busy={busy}
           close={() => setConfirmOpen(false)}
           confirm={() => void closeAndChange()}

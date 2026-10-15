@@ -1,21 +1,24 @@
 "use client";
-import { useEffect, useId, useRef } from "react";
+import { useEffect, useId, useRef, type RefObject } from "react";
 import { useTicketText } from "./shared";
 
 export function TicketConfirmDialog({
   busy,
   close,
   confirm,
+  returnFocusRef,
 }: {
   busy: boolean;
   close: () => void;
   confirm: () => void;
+  returnFocusRef: RefObject<HTMLButtonElement | null>;
 }) {
   const { t } = useTicketText();
   const ref = useRef<HTMLDialogElement>(null);
   const id = useId();
   useEffect(() => {
-    const previous = document.activeElement as HTMLElement | null;
+    // The dialog's autoFocus button may already be active before this effect.
+    const previous = returnFocusRef.current;
     const dialog = ref.current!;
     const overflow = document.body.style.overflow;
     dialog.showModal();
@@ -23,9 +26,9 @@ export function TicketConfirmDialog({
     return () => {
       dialog.close();
       document.body.style.overflow = overflow;
-      previous?.focus();
+      if (previous?.isConnected) previous.focus({ preventScroll: true });
     };
-  }, []);
+  }, [returnFocusRef]);
   return (
     <dialog
       ref={ref}

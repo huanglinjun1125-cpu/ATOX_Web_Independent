@@ -192,9 +192,9 @@ test("Homepage copy and key navigation render without JavaScript", async ({
     const page = await context.newPage();
     await page.goto("/");
     await expect(page.getByRole("heading", { level: 1 })).toContainText(
-      "好奇心",
+      "连接青年",
     );
-    await expect(page.locator("#about")).toContainText("面向创造者");
+    await expect(page.locator("#about")).toContainText("ATOX 爱拓无限");
     await expect(page.locator(".hp-program")).toHaveCount(3);
     await page.locator('.hp-hero a[href="/projects"]').click();
     await expect(page.getByRole("heading", { level: 1 })).toContainText(

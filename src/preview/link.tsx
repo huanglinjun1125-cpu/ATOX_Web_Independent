@@ -13,6 +13,10 @@ export default function Link({
   replace?: boolean;
   scroll?: boolean;
 }) {
+  // Next.js-only navigation options have no effect in the static preview.
+  void _prefetch;
+  void _replace;
+  void _scroll;
   return (
     <a href={href} {...props}>
       {children}

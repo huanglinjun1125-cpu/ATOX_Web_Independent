@@ -2,6 +2,10 @@
 
 本仓库是基于 aladyaraya/Atox_Web 的独立开发副本，统一 ATOX 品牌视觉，并加入马来西亚 AI 与 MVP 黑客松活动页面。原开发者仓库未修改。
 
+[查看在线展示](https://atox-web-independent.goodcharm129.chatgpt.site) · [GitHub 源码](https://github.com/huanglinjun1125-cpu/ATOX_Web_Independent)
+
+在线链接已开放访问，适合分享页面设计与公开活动信息；正式登录、报名和支付仍待服务配置。
+
 基线来源：https://github.com/aladyaraya/Atox_Web ，基线提交 `39a9ea9603852ee6dada34d229ee1bb80ac4cddb`。保留原模块、数据库迁移、认证与权限逻辑；没有复制任何账户、密钥或私有运行数据。原说明留存在 [UPSTREAM_README](docs/UPSTREAM_README.md)。没有新增开源许可证。
 
 ## 这次交付

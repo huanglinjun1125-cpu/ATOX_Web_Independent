@@ -6,6 +6,7 @@ export default defineConfig([
   ...nextVitals,
   ...nextTs,
   globalIgnores([
+    "dist/**",
     ".next/**",
     ".next-*/**",
     ".next-ticket-orders-e2e/**",

@@ -29,7 +29,7 @@ test("Board combines URL filters, restores language and renders a mobile grid", 
   await expect(
     page.getByRole("heading", { name: "活动", exact: true }),
   ).toBeVisible();
-  await expect(page.locator(".eb-card")).toHaveCount(3);
+  await expect(page.locator(".eb-card")).toHaveCount(4);
   await expect(page.locator(".eb-recommended")).toHaveCount(1);
   const columns = () =>
     page
@@ -69,12 +69,12 @@ test("Board combines URL filters, restores language and renders a mobile grid", 
     .getByRole("button", { name: "重置筛选", exact: true })
     .first()
     .click();
-  await expect(page.locator(".eb-card")).toHaveCount(3);
+  await expect(page.locator(".eb-card")).toHaveCount(4);
   await page.getByLabel("搜索活动", { exact: true }).fill("  DOES-NOT-EXIST  ");
   await expect(page.locator(".eb-card")).toHaveCount(0);
   await expect(page).toHaveURL(/q=DOES-NOT-EXIST/);
   await page.goBack();
-  await expect(page.locator(".eb-card")).toHaveCount(3);
+  await expect(page.locator(".eb-card")).toHaveCount(4);
   await page.setViewportSize({ width: 390, height: 844 });
   await expect(page.locator(".eb-card").first()).toBeVisible();
   expect(await columns()).toBe(1);

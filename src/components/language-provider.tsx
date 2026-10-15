@@ -31,7 +31,7 @@ export function LanguageProvider({
   children,
   defaultLanguage = "zh",
 }: {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   defaultLanguage?: Language;
 }) {
   const language = useSyncExternalStore(

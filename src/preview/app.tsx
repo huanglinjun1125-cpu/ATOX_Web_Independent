@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { LanguageProvider } from "@/components/language-provider";
 import { Header, Footer } from "@/components/site-shell";
 import { HomeView } from "@/modules/homepage/components/home-view";
@@ -62,13 +63,13 @@ export function PreviewApp({
             <p className="lead" style={{ marginTop: 20 }}>
               这是公开页面预览。登录、组队与私有材料功能保留在完整源码中，待正式服务部署后开放。
             </p>
-            <a
+            <Link
               className="primary button"
               style={{ marginTop: 32 }}
               href="/events"
             >
               Explore events <span>↗</span>
-            </a>
+            </Link>
           </div>
         </main>
         <Footer />

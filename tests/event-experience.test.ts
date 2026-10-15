@@ -69,10 +69,7 @@ test("An interest destination must be absolute HTTPS and must not contain creden
 });
 test("The English event page exposes accessible tab panels and truthful pending information", () => {
   const s = renderToStaticMarkup(
-    createElement(LanguageProvider, {
-      defaultLanguage: "en",
-      children: createElement(EventView),
-    }),
+    createElement(LanguageProvider, { defaultLanguage: "en" }, createElement(EventView)),
   );
   assert.match(s, /Build AI/);
   assert.match(s, /ATOX × TAMAPUSC at APU/);
